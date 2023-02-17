@@ -7,8 +7,8 @@ You can run Pocketbase on your local PC
 - Run `npm i`
 - Run `npm run dev`
 
-Create a user in Pocketbase and use that credentials to authenticate
-Setup your collection rules to allow access only for logged in users (`@request.auth.id != ""`)
+- Create a user in Pocketbase and use that credentials to authenticate
+- Setup your collection rules to allow access only for logged in users (`@request.auth.id != ""`)
 
 ### Branching on Repo
 
