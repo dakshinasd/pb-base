@@ -1,6 +1,5 @@
 export default async function handler(req, res) {
   const API_URL = "http://localhost:8090/api/collections/parts/records";
-  console.log("PART API", req.method);
 
   if (req.method == "GET") {
     const apiRes = await fetch(`${API_URL}`, {
