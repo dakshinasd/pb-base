@@ -1,4 +1,5 @@
 import { MouseEvent, useState } from "react";
+import { Button, Input } from "../../components";
 
 const CreatePart = () => {
   const [partName, setPartName] = useState<string>("");
@@ -30,12 +31,12 @@ const CreatePart = () => {
     <div>
       Create part
       <form action="">
-        <input
+        <Input
           type="text"
           onChange={(e) => setPartName(e.target.value)}
           placeholder="Part Name"
         />
-        <button onClick={handleFormSubmit}>Save</button>
+        <Button onClick={handleFormSubmit}>Save</Button>
       </form>
     </div>
   );

@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { MouseEvent, useContext, useState } from "react";
 
 import { AuthContext } from "../../AuthContext";
+import { Button, Input } from "../../components";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -43,17 +44,17 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <form action="">
-        <input
+        <Input
           type="text"
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
         />
-        <input
+        <Input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleClickOnLogin}>Login</button>
+        <Button onClick={handleClickOnLogin}>Login</Button>
       </form>
     </div>
   );
