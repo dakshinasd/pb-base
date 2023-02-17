@@ -1,21 +1,16 @@
-import { MouseEvent, useContext, useState } from "react";
-
-import { AuthContext } from "../../AuthContext";
+import { MouseEvent, useState } from "react";
 
 const CreatePart = () => {
   const [partName, setPartName] = useState<string>("");
-  const API = process.env.NEXT_PUBLIC_API_PATH;
-  const { user } = useContext(AuthContext);
 
   const handleFormSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
-      const createResponse = await fetch(`${API}/collections/parts/records`, {
+      const createResponse = await fetch(`/api/parts`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: user?.token || null,
         },
         body: JSON.stringify({
           name: partName,
@@ -27,7 +22,6 @@ const CreatePart = () => {
       }
 
       const response = await createResponse.json();
-      console.log(response);
     } catch (err) {
       console.error(err);
     }
