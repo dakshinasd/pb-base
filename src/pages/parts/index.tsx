@@ -1,14 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
-import useFetch from "../../hooks/useFetch";
+import useParts from "../../hooks/useParts";
 
 const Parts = () => {
-  const {
-    data: parts,
-    isLoading,
-    error,
-  } = useFetch("collections/parts/records");
+  const { data: parts, isLoading, error } = useParts();
 
   if (isLoading) {
     return <div>Loading....</div>;
