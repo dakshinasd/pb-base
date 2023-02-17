@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import Link from "next/link";
+import React from "react";
 
 import useFetch from "../../hooks/useFetch";
 
@@ -19,7 +20,7 @@ const Parts = () => {
 
   return (
     <div className="p-2">
-      Parts
+      Parts <Link href="/parts/create">Create</Link>
       <ul>
         {parts?.items?.map((part) => (
           <li key={part.id}>{part.name}</li>
