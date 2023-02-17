@@ -19,7 +19,10 @@ const Parts = () => {
       Parts <Link href="/parts/create">Create</Link>
       <ul>
         {parts?.items?.map((part) => (
-          <li key={part.id}>{part.name}</li>
+          <li key={part.id} className="flex">
+            <span className="flex-1">{part.id}</span>
+            <span className="flex-1">{part.name}</span>
+          </li>
         ))}
       </ul>
     </div>
